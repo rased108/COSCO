@@ -1,26 +1,27 @@
 from sys import version
 from utils.ColorUtils import *
 
-if float(version[0:3]) < 3.6:
-	print(color.FAIL+'Python 3.6 or above required!'+color.ENDC)
-	exit()
+# if float(version[0:3]) < 3.6:
+	# print(color.FAIL+'Python 3.6 or above required!'+color.ENDC)
+	# exit()
 
 import platform
 from os import mkdir, makedirs, remove, path, system, environ, getcwd
 if 'Windows' in platform.system():
 	from os import startfile
 
-system('python3 -m pip install matplotlib scikit-learn')
-system('python3 -m pip install -r requirements.txt')
-system('python3 -m pip install torch==1.7.1+cpu torchvision==0.8.2+cpu -f https://download.pytorch.org/whl/torch_stable.html')
+system('py -m pip install matplotlib scikit-learn')
+system('py -m pip install -r requirements.txt')
+system('py -m pip install torch==1.7.1+cpu torchvision==0.8.2+cpu -f https://download.pytorch.org/whl/torch_stable.html')
 
 import wget
 from zipfile import ZipFile
-from shutil import copy
+from shutil import copyfile
 import sys
 import os
 import subprocess
 from getpass import getpass
+# import copy
 
 # Install Ansible
 password = getpass(color.BOLD+'Please enter linux password:'+color.ENDC)
@@ -91,11 +92,11 @@ elif 'Linux' in platform.system():
 	run_cmd_pwd('apt install virtualbox', password)
 
 # Copy SSH keys
-ssh_dir = 'C:'+environ['homepath']+'\\.ssh' if 'Windows' in platform.system() else environ['HOME']+'/.ssh'
+ssh_dir = 'C:'+environ['homepath']+'\\ssh' if 'Windows' in platform.system() else environ['HOME']+'/ssh'
 if not path.exists(ssh_dir):
 	makedirs(ssh_dir)
-for filename in ['id_rsa', 'id_rsa.pub']:
-	copy('framework/install_scripts/ssh_keys/'+filename, ssh_dir)
+# for filename in ['id_rsa', 'id_rsa.pub']:
+	# copyfile('framework/install_scripts/ssh_keys/'+filename, ssh_dir)
 
 run_cmd_pwd("apt install ansible", password)
 run_cmd_pwd("apt install dos2unix", password)
