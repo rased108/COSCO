@@ -36,7 +36,7 @@ class RequestRouter():
         rc = codes.SUCCESS
         memory = psutil.virtual_memory()
         disk = psutil.disk_usage('/')
-        data = subprocess.run("./scripts/calIPS_clock.sh", shell=True,stdout=subprocess.PIPE)
+        data = subprocess.run("./agent/scripts/calIPS_clock.sh", shell=True,stdout=subprocess.PIPE)
         data  = (data.stdout.decode()).splitlines()
         bw = ((subprocess.run("sudo ethtool "+self.interface+" | grep Speed",shell=True,stdout=subprocess.PIPE)).stdout.decode()).split()[1][0:4]
         payload ={
