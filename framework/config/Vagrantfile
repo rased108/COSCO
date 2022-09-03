@@ -1,24 +1,24 @@
 servers=[
 	{
 		:hostname => 'vm1',
-		:ip => '192.168.0.2',
+		:ip => '192.168.122.2',
 		:box => 'ubuntu/bionic64',
-		:ram => 4096,
+		:ram => 1024,
 		:cpu => 2,
 		:disk => '20GB'
 	},
 	{
 		:hostname => 'vm2',
-		:ip => '192.168.0.3',
+		:ip => '192.168.122.3',
 		:box => 'ubuntu/bionic64',
-		:ram => 8192,
+		:ram => 2048,
 		:cpu => 4,
 		:disk => '30GB'
 	}
 ]
 
 
-agent_path='C:/Users/SHRESHTH/Desktop/COSCO/framework/agent'
+agent_path='D:/Rased/BUET/Data Management in the Cloud/Project/Projects/Forked/COSCO/framework/agent'
 
 Vagrant.configure(2) do |config|
     servers.each do |machine|

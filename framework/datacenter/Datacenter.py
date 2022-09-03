@@ -46,7 +46,14 @@ class Datacenter():
             with open('framework/server/scripts/instructions_arch.json') as f:
                 arch_dict = json.load(f)
             instructions = arch_dict[platform.machine()]
-        outputHostsData = Parallel(n_jobs=num_cores)(delayed(self.parallelizedFunc)(i) for i in self.hosts)
+        #outputHostsData = Parallel(n_jobs=num_cores)(delayed(self.parallelizedFunc)(i) for i in self.hosts)
+        #rased_start
+        outputHostsData = []
+        for i in self.hosts:
+            outputHostsData += [self.parallelizedFunc(i)]
+
+        print(outputHostsData)
+        #rased_end
         for i, data in enumerate(outputHostsData):
             IP = self.hosts[i]
             logging.error("Host details collected from: {}".format(IP))

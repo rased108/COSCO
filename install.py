@@ -92,11 +92,11 @@ elif 'Linux' in platform.system():
 	run_cmd_pwd('apt install virtualbox', password)
 
 # Copy SSH keys
-ssh_dir = 'C:'+environ['homepath']+'\\ssh' if 'Windows' in platform.system() else environ['HOME']+'/ssh'
+ssh_dir = 'C:'+environ['homepath']+'\\.ssh' if 'Windows' in platform.system() else environ['HOME']+'/.ssh'
 if not path.exists(ssh_dir):
 	makedirs(ssh_dir)
-# for filename in ['id_rsa', 'id_rsa.pub']:
-	# copyfile('framework/install_scripts/ssh_keys/'+filename, ssh_dir)
+for filename in ['id_rsa', 'id_rsa.pub']:
+	copyfile('framework/install_scripts/ssh_keys/'+filename, ssh_dir)
 
 run_cmd_pwd("apt install ansible", password)
 run_cmd_pwd("apt install dos2unix", password)
