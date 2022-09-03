@@ -4,7 +4,7 @@ sudo apt-get update
 sudo apt-get -y install apt-transport-https ca-certificates curl criu software-properties-common python3-pip virtualenv python3-setuptools linux-tools-generic linux-tools-4.15.0-72-generic sysbench ioping
 python3 -m pip install flask-restful inotify Flask psutil docker
 sudo chmod +x $HOME/agent/agent.py
-
+sudo sed -i -e 's/\r$//' ./agent/scripts/calIPS_clock.sh
 # Install Docker
 
 sudo mkdir /etc/docker
@@ -20,9 +20,10 @@ newgrp docker
 
 # Setup Flask 
 
-sudo cp ~/agent/scripts/flask.conf /etc/init.d/
-sudo cp ~/agent/scripts/flask.service /lib/systemd/system/flask.service
-sudo service flask start
+#sudo cp ~/agent/scripts/flask.conf /etc/init.d/
+#sudo cp ~/agent/scripts/flask.service /lib/systemd/system/flask.service
+#sudo service flask start
+sudo python3 ./agent/agent.py
 sudo chmod +x ~/agent/scripts/delete.sh
 
 # Load Docker images
