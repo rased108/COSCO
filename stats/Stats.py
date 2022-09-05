@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 from scheduler.GOBI import GOBIScheduler
+from scheduler.SimpleScheduler import *
 
 plt.style.use(['science'])
 plt.rcParams["text.usetex"] = False
@@ -14,6 +15,7 @@ class Stats():
 		self.datacenter = Datacenter
 		self.scheduler = Scheduler
 		self.simulated_scheduler = GOBIScheduler('energy_latency_'+str(self.datacenter.num_hosts))
+		# self.simulated_scheduler = SimpleScheduler() #added by rased
 		self.simulated_scheduler.env = self.env
 		self.initStats()
 

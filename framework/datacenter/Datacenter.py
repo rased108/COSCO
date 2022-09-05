@@ -53,7 +53,7 @@ class Datacenter():
         # for i in self.hosts:
         #     outputHostsData += [self.parallelizedFunc(i)]
         #rased_end
-        print(outputHostsData)
+        # print(outputHostsData)
 
         for i, data in enumerate(outputHostsData):
             IP = self.hosts[i]

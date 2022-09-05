@@ -10,6 +10,7 @@ import platform
 from time import time
 from subprocess import call
 from os import system, rename
+from scheduler.SimpleScheduler import *
 
 # Framework imports
 from framework.Framework import *
@@ -71,8 +72,8 @@ HOSTS = 10 * 5 if opts.env == '' else 10
 CONTAINERS = HOSTS
 TOTAL_POWER = 1000
 ROUTER_BW = 10000
-INTERVAL_TIME = 300 # seconds
-NEW_CONTAINERS = 0 if HOSTS == 10 else 5
+INTERVAL_TIME = 30 # seconds rased modified
+NEW_CONTAINERS = 2 if HOSTS == 10 else 5 #rased modified
 DB_NAME = ''
 DB_HOST = ''
 DB_PORT = 0
@@ -104,6 +105,7 @@ def initalizeEnvironment(environment, logger):
 	# Initialize scheduler
 	''' Can be LRMMTR, RF, RL, RM, Random, RLRMMTR, TMCR, TMMR, TMMTR, GA, GOBI (arg = 'energy_latency_'+str(HOSTS)) '''
 	scheduler = GOBIScheduler('energy_latency_'+str(HOSTS)) # GOBIScheduler('energy_latency_'+str(HOSTS))
+	# scheduler = SimpleScheduler() #added by rased
 
 	# Initialize Environment
 	hostlist = datacenter.generateHosts()

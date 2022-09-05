@@ -16,7 +16,55 @@
 				"cpu" : 4,
 				"disk": 30,
 				"powermodel": "PMXeon_X5570"
-			}
+			},
+			{
+				"ram" : 512,
+				"cpu" : 2,
+				"disk": 15,
+				"powermodel": "PMXeon_X5570"
+			},
+			{
+				"ram" : 512,
+				"cpu" : 2,
+				"disk": 15,
+				"powermodel": "PMXeon_X5570"
+			},
+			{
+				"ram" : 512,
+				"cpu" : 2,
+				"disk": 15,
+				"powermodel": "PMXeon_X5570"
+			},
+			{
+				"ram" : 512,
+				"cpu" : 2,
+				"disk": 15,
+				"powermodel": "PMXeon_X5570"
+			},
+			{
+				"ram" : 512,
+				"cpu" : 2,
+				"disk": 15,
+				"powermodel": "PMXeon_X5570"
+			},
+			{
+				"ram" : 512,
+				"cpu" : 2,
+				"disk": 15,
+				"powermodel": "PMXeon_X5570"
+			},
+			{
+				"ram" : 512,
+				"cpu" : 2,
+				"disk": 15,
+				"powermodel": "PMXeon_X5570"
+			},
+			{
+				"ram" : 512,
+				"cpu" : 2,
+				"disk": 15,
+				"powermodel": "PMXeon_X5570"
+			}			
 		]
 	}
 }

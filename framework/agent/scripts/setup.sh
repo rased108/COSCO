@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt-get update
-sudo apt-get -y install apt-transport-https ca-certificates curl criu software-properties-common python3-pip virtualenv python3-setuptools linux-tools-generic linux-tools-4.15.0-72-generic sysbench ioping
+sudo apt-get -y install apt-transport-https ca-certificates curl criu software-properties-common python3-pip virtualenv python3-setuptools linux-tools-generic linux-tools-4.15.0-72-generic sysbench ioping linux-tools-4.15.0-191-generic linux-cloud-tools-4.15.0-191-generic
 sudo python3 -m pip install flask-restful inotify Flask psutil docker
 sudo chmod +x $HOME/agent/agent.py
 sudo sed -i -e 's/\r$//' ./agent/scripts/calIPS_clock.sh
