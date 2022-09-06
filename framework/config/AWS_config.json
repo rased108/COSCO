@@ -1,0 +1,70 @@
+{
+	"database" : {
+		"ip": "127.0.0.1",
+		"port":8086},
+	"aws" : {
+		"box" : "ubuntu/bionic64",
+		"servers" : [
+			{
+				"ram" : 1024,
+				"cpu" : 2,
+				"disk": 20,
+				"powermodel": "PMXeon_X5570"
+			},
+			{
+				"ram" : 2048,
+				"cpu" : 4,
+				"disk": 30,
+				"powermodel": "PMXeon_X5570"
+			},
+			{
+				"ram" : 512,
+				"cpu" : 2,
+				"disk": 15,
+				"powermodel": "PMXeon_X5570"
+			},
+			{
+				"ram" : 512,
+				"cpu" : 2,
+				"disk": 15,
+				"powermodel": "PMXeon_X5570"
+			},
+			{
+				"ram" : 512,
+				"cpu" : 2,
+				"disk": 15,
+				"powermodel": "PMXeon_X5570"
+			},
+			{
+				"ram" : 512,
+				"cpu" : 2,
+				"disk": 15,
+				"powermodel": "PMXeon_X5570"
+			},
+			{
+				"ram" : 512,
+				"cpu" : 2,
+				"disk": 15,
+				"powermodel": "PMXeon_X5570"
+			},
+			{
+				"ram" : 512,
+				"cpu" : 2,
+				"disk": 15,
+				"powermodel": "PMXeon_X5570"
+			},
+			{
+				"ram" : 512,
+				"cpu" : 2,
+				"disk": 15,
+				"powermodel": "PMXeon_X5570"
+			},
+			{
+				"ram" : 512,
+				"cpu" : 2,
+				"disk": 15,
+				"powermodel": "PMXeon_X5570"
+			}			
+		]
+	}
+}

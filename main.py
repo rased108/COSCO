@@ -218,6 +218,10 @@ if __name__ == '__main__':
 			print("Setting up VLAN environment using Ansible")
 			HOSTS_IP = setupVLANEnvironment(configFile, mode)
 			print(HOSTS_IP)
+		elif env == 'AWS':
+			print("Setting up AWS environment using Vagrant")
+			HOSTS_IP = ["13.124.127.12", "43.200.220.200", "43.200.73.58", "43.201.13.222", "52.78.94.67", "18.176.88.91", "35.75.54.218", "35.77.206.31", "43.206.37.22", "54.64.228.138"]
+			print(HOSTS_IP)
 		# exit()
 
 	datacenter, workload, scheduler, env, stats = initalizeEnvironment(env, logger)
