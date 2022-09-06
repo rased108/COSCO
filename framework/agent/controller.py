@@ -37,8 +37,12 @@ class RequestRouter():
         memory = psutil.virtual_memory()
         disk = psutil.disk_usage('/')
         data = subprocess.run("./agent/scripts/calIPS_clock.sh", shell=True,stdout=subprocess.PIPE)
-        data  = (data.stdout.decode()).splitlines()
-        bw = ((subprocess.run("sudo ethtool "+self.interface+" | grep Speed",shell=True,stdout=subprocess.PIPE)).stdout.decode()).split()[1][0:4]
+        data = (data.stdout.decode()).splitlines()
+        bw = ((subprocess.run("sudo ethtool "+self.interface+" | grep Speed",shell=True,stdout=subprocess.PIPE)).stdout.decode())
+        if bw == '':
+            bw = 1000
+        else:
+            bw = bw.split()[1][0:4]
         payload ={
                 "Total_Memory": int(float(memory.total/(1024*1024))),
                 "Total_Disk": int(float(disk.total/(1024*1024))),

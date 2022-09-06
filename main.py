@@ -99,6 +99,7 @@ def initalizeEnvironment(environment, logger):
 	''' Can be SWSD, BWGD2, Azure2017Workload, Azure2019Workload // DFW, AIoTW '''
 	if environment != '':
 		workload = DFW(NEW_CONTAINERS, 1.5, db)
+		# workload = AIoTW(NEW_CONTAINERS, 1.5, db) #rased modified
 	else: 
 		workload = BWGD2(NEW_CONTAINERS, 1.5)
 	
