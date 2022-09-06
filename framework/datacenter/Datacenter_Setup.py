@@ -95,3 +95,6 @@ def setupVagrantEnvironment(cfg, mode):
 def destroyVagrantEnvironment(cfg, mode):
     if mode in [0, 3]:
         call(["vagrant", "destroy -f"])
+
+def destroyAWSEnvironment(cfg, mode):
+    print("Completed")
