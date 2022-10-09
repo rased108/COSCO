@@ -3,16 +3,16 @@ servers=[
 		:hostname => 'vm1',
 		:ip => '192.168.122.2',
 		:box => 'ubuntu/bionic64',
-		:ram => 1024,
-		:cpu => 2,
+		:ram => 512,
+		:cpu => 1,
 		:disk => '20GB'
 	},
 	{
 		:hostname => 'vm2',
 		:ip => '192.168.122.3',
 		:box => 'ubuntu/bionic64',
-		:ram => 2048,
-		:cpu => 4,
+		:ram => 512,
+		:cpu => 1,
 		:disk => '30GB'
 	},
 	{
@@ -20,7 +20,7 @@ servers=[
 		:ip => '192.168.122.4',
 		:box => 'ubuntu/bionic64',
 		:ram => 512,
-		:cpu => 2,
+		:cpu => 1,
 		:disk => '15GB'
 	},
 	{
@@ -28,7 +28,7 @@ servers=[
 		:ip => '192.168.122.5',
 		:box => 'ubuntu/bionic64',
 		:ram => 512,
-		:cpu => 2,
+		:cpu => 1,
 		:disk => '15GB'
 	},
 	{
@@ -36,7 +36,7 @@ servers=[
 		:ip => '192.168.122.6',
 		:box => 'ubuntu/bionic64',
 		:ram => 512,
-		:cpu => 2,
+		:cpu => 1,
 		:disk => '15GB'
 	},
 	{
@@ -44,7 +44,7 @@ servers=[
 		:ip => '192.168.122.7',
 		:box => 'ubuntu/bionic64',
 		:ram => 512,
-		:cpu => 2,
+		:cpu => 1,
 		:disk => '15GB'
 	},
 	{
@@ -52,7 +52,7 @@ servers=[
 		:ip => '192.168.122.8',
 		:box => 'ubuntu/bionic64',
 		:ram => 512,
-		:cpu => 2,
+		:cpu => 1,
 		:disk => '15GB'
 	},
 	{
@@ -60,7 +60,7 @@ servers=[
 		:ip => '192.168.122.9',
 		:box => 'ubuntu/bionic64',
 		:ram => 512,
-		:cpu => 2,
+		:cpu => 1,
 		:disk => '15GB'
 	},
 	{
@@ -68,7 +68,7 @@ servers=[
 		:ip => '192.168.122.10',
 		:box => 'ubuntu/bionic64',
 		:ram => 512,
-		:cpu => 2,
+		:cpu => 1,
 		:disk => '15GB'
 	},
 	{
@@ -76,13 +76,13 @@ servers=[
 		:ip => '192.168.122.11',
 		:box => 'ubuntu/bionic64',
 		:ram => 512,
-		:cpu => 2,
+		:cpu => 1,
 		:disk => '15GB'
 	}
 ]
 
 
-agent_path='D:/Rased/BUET/Data Management in the Cloud/Project/Projects/Forked/COSCO/framework/agent'
+agent_path='D:/BUET/Data Management In the Cloud/Project/COSCO/framework/agent'
 
 Vagrant.configure(2) do |config|
     servers.each do |machine|
