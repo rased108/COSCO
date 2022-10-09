@@ -66,14 +66,16 @@ parser.add_option("-m", "--mode", action="store", dest="mode", default="0",
 					help="Mode is 0 (Create and destroy), 1 (Create), 2 (No op), 3 (Destroy)")
 opts, args = parser.parse_args()
 
+#sys.exit(0)
+
 # Global constants
-NUM_SIM_STEPS = 5
+NUM_SIM_STEPS = 10
 HOSTS = 10 * 5 if opts.env == '' else 10
 CONTAINERS = HOSTS
 TOTAL_POWER = 1000
 ROUTER_BW = 10000
 INTERVAL_TIME = 30 # seconds rased modified
-NEW_CONTAINERS = 2 if HOSTS == 10 else 5 #rased modified
+NEW_CONTAINERS = 3 if HOSTS == 10 else 5 #rased modified
 DB_NAME = ''
 DB_HOST = ''
 DB_PORT = 0
@@ -105,7 +107,7 @@ def initalizeEnvironment(environment, logger):
 	
 	# Initialize scheduler
 	''' Can be LRMMTR, RF, RL, RM, Random, RLRMMTR, TMCR, TMMR, TMMTR, GA, GOBI (arg = 'energy_latency_'+str(HOSTS)) '''
-	scheduler = GOBIScheduler('energy_latency_'+str(HOSTS)) # GOBIScheduler('energy_latency_'+str(HOSTS))
+	scheduler = GOBIScheduler('energy_latency1_'+str(HOSTS)) # GOBIScheduler('energy_latency_'+str(HOSTS))
 	# scheduler = SimpleScheduler() #added by rased
 
 	# Initialize Environment
@@ -241,3 +243,7 @@ if __name__ == '__main__':
 
 	saveStats(stats, datacenter, workload, env)
 
+	if env == 'Vagrant':
+		subprocess.call('agent_cleanup.bat')
+	elif env == 'AWS':
+		print("Cleaning to be implemented")
